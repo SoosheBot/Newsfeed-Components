@@ -101,59 +101,55 @@ const data = [
 //   Your function should take either an object as it's one argument, or 5 separate arguments mapping to each piece of the data object above.
 
 const articles = document.querySelector('.articles');
-function elements(title, date, firstParagraph, secondParagraph, thirdParagraph){
+
+function createElements(title, date, firstParagraph, secondParagraph, thirdParagraph){
   const article = document.createElement('div');
   const articleHeader = document.createElement('h2');
   const articleDate = document.createElement('p');
   const para1 = document.createElement('p');
   const para2 = document.createElement('p');
   const para3 = document.createElement('p');
+  const para4 = document.createElement('p');
   const expandButton = document.createElement('span');
 
+  //set structure of elements
   article.appendChild(articleHeader);
   article.appendChild(articleDate);
   article.appendChild(para1);
   article.appendChild(para2);
   article.appendChild(para3);
+  article.appendChild(para4);
   article.appendChild(expandButton);
 
+  //set class names
+  articleHeader.classList.add('article');
+  articleDate.classList.add('date');
+  expandButton.classList.add('span');
+
+  //adding text for fourth paragraph here
+  const fourthParagraph = "This is the fourth paragraph! Stunning spells tap-dancing spider Slytherin’s Heir mewing kittens Remus Lupin. Hodor hodor - hodor... Hodor hodor hodor hodor. Hodor. Hodor! Metamorphimagus Niffler dead easy second bedroom. Padma and Parvati hodorPalominos scarlet train black robesSorting Hat Minister of Magic blue.";
+
+  //set text content for all
   articleHeader.textContent = title;
   articleDate.textContent = date;
   para1.textContent = firstParagraph;
   para2.textContent = secondParagraph;
   para3.textContent = thirdParagraph;
+  para4.textContent = fourthParagraph;
   expandButton.textContent = 'MORE';
 
-  articleHeader.classList.add('article');
-  articleDate.classList.add('date');
-  expandButton.classList.add('span');
-
+  
   expandButton.addEventListener('click', e => {
     article.classList.toggle('article-open');
   })
   return article;
-
 }
 
-
-
 data.forEach(e => {
-  let fourthParagraph = elements(e);
-  fourthParagraph = document.createElement('p');
-  fourthParagraph.textContent = "This is the fourth paragraph! tap-dancing spider Slytherin’s Heir mewing kittens Remus Lupin. Hodor hodor - Niffler dead easy second bedroom. Padma and Parvati Sorting Hat Minister of Magic.";
-  articles.appendChild(fourthParagraph); //THIS ISN"T RIGHT--but my map (BELOW) isn't working.
-  articles.appendChild(elements(e.title, e.date, e.firstParagraph, e.secondParagraph, e.thirdParagraph,e.fourthParagraph));
+  articles.appendChild(createElements(e.title, e.date, e.firstParagraph, e.secondParagraph, e.thirdParagraph,e.fourthParagraph));
 })
 
-// let newData = data.map((e) => {
-//   let newParagraph = elements(e);
-//   newParagraph.textContent = "Stunning spells tap-dancing spider Slytherin’s Heir mewing kittens Remus Lupin. Hodor hodor - hodor... Hodor hodor hodor hodor. Hodor. Hodor! Hodor hodor, hodor hodor hodor hodor hodor; hodor hodor? Hodor! Hodor hodor, HODOR hodorPalominos scarlet train black robes, Metamorphimagus Niffler dead easy second bedroom. Padma and Parvati Sorting Hat Minister of Magic blue turban remember my last.";
-//   return newParagraph;
-// });
 
-// newData.forEach(e => {
-//   articles.appendChild(elements(e.title, e.date, e.firstParagraph, e.secondParagraph, e.thirdParagraph,e.newParagraph));
-// });
 
 
 
