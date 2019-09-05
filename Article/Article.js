@@ -85,6 +85,15 @@ const data = [
     thirdParagraph: `Hodor hodor - hodor... Hodor hodor hodor hodor. Hodor. Hodor! Hodor hodor, hodor hodor hodor hodor hodor; hodor hodor? Hodor!
           Hodor hodor, HODOR hodor, hodor hodor?! Hodor! Hodor hodor, HODOR hodor, hodor hodor, hodor, hodor hodor. Hodor, hodor.
           Hodor. Hodor, hodor, hodor. Hodor hodor... Hodor hodor hodor?! Hodor, hodor... Hodor hodor HODOR hodor, hodor hodor. Hodor.`
+  },
+  {
+    title: 'Caturday is Every Day on the Internet',
+    date: 'September 18th, 2019',
+    firstParagraph: `The happiest of days is caturday. `,
+
+    secondParagraph: `Mostly because there isn't a doggoday, I think.`,
+
+    thirdParagraph: `But really, any excuse to look at a Very Good catto or doggo is a happiest of day.`
   }
 ];
 
@@ -109,7 +118,6 @@ function createElements(title, date, firstParagraph, secondParagraph, thirdParag
   const para1 = document.createElement('p');
   const para2 = document.createElement('p');
   const para3 = document.createElement('p');
-  const para4 = document.createElement('p');
   const expandButton = document.createElement('span');
 
   //set structure of elements
@@ -118,7 +126,6 @@ function createElements(title, date, firstParagraph, secondParagraph, thirdParag
   article.appendChild(para1);
   article.appendChild(para2);
   article.appendChild(para3);
-  article.appendChild(para4);
   article.appendChild(expandButton);
 
   //set class names
@@ -135,7 +142,6 @@ function createElements(title, date, firstParagraph, secondParagraph, thirdParag
   para1.textContent = firstParagraph;
   para2.textContent = secondParagraph;
   para3.textContent = thirdParagraph;
-  para4.textContent = fourthParagraph;
   expandButton.textContent = 'MORE';
 
   
@@ -146,7 +152,7 @@ function createElements(title, date, firstParagraph, secondParagraph, thirdParag
 }
 
 data.forEach(e => {
-  articles.appendChild(createElements(e.title, e.date, e.firstParagraph, e.secondParagraph, e.thirdParagraph,e.fourthParagraph));
+  articles.appendChild(createElements(e.title, e.date, e.firstParagraph, e.secondParagraph, e.thirdParagraph));
 })
 
 
