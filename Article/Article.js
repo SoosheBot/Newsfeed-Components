@@ -140,7 +140,7 @@ function elements(title, date, firstParagraph, secondParagraph, thirdParagraph){
 data.forEach(e => {
   let fourthParagraph = elements(e);
   fourthParagraph = document.createElement('p');
-  fourthParagraph.textContent = "Stunning spells tap-dancing spider Slytherin’s Heir mewing kittens Remus Lupin. Hodor hodor - hodor... Hodor hodor hodor hodor. Hodor. Hodor! Hodor hodor, hodor hodor hodor hodor hodor; hodor hodor? Hodor! Hodor hodor, HODOR hodorPalominos scarlet train black robes, Metamorphimagus Niffler dead easy second bedroom. Padma and Parvati Sorting Hat Minister of Magic blue turban remember my last.";
+  fourthParagraph.textContent = "This is the fourth paragraph! tap-dancing spider Slytherin’s Heir mewing kittens Remus Lupin. Hodor hodor - Niffler dead easy second bedroom. Padma and Parvati Sorting Hat Minister of Magic.";
   articles.appendChild(fourthParagraph); //THIS ISN"T RIGHT--but my map (BELOW) isn't working.
   articles.appendChild(elements(e.title, e.date, e.firstParagraph, e.secondParagraph, e.thirdParagraph,e.fourthParagraph));
 })
